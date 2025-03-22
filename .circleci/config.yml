@@ -17,7 +17,7 @@ jobs:
       
       - run:
           name: Install Playwright browsers
-          command: pwsh playwright-nunit/bin/Release/net8.0/playwright.ps1 install
+          command: pwsh playwright-nunit/bin/Release/net8.0/playwright.ps1 install --with-deps chromium
       
       - run:
           name: Run CSharp Playwright tests
