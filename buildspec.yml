@@ -21,4 +21,4 @@ phases:
 artifacts:
   files:
     - '**/TestResults/**/*'
-    discard-paths: yes
+  discard-paths: yes
