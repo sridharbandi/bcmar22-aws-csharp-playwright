@@ -1,0 +1,24 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: 8.0
+  pre_build:
+    commands:
+      - echo install project dependencies
+      - dotnet restore
+  build:
+    commands:
+      - echo build the project
+      - dotnet build --configuration Release
+      - echo install playwright browsers
+      - pwsh playwright-nunit/bin/Release/net8.0/playwright.ps1 install
+  post_build:
+    commands:
+      - echo run the tests
+      - dotnet test --configuration Release --no-build --logger "html;LogFileName=index.html"
+artifacts:
+  files:
+    - '**/TestResults/**/*'
+    discard-paths: yes
