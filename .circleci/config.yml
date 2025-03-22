@@ -24,7 +24,7 @@ jobs:
           command: dotnet test --configuration Release --no-build --logger "html;LogFileName=index.html"
       
       - store_artifacts:
-          path: '**/TestResults'
+          path: 'playwright-nunit/TestResults'
           destination: playwright-csharp-results
 
 workflows:
