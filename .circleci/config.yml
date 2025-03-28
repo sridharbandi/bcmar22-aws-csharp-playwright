@@ -28,7 +28,6 @@ jobs:
           destination: playwright-csharp-results
 
 workflows:
-  version: 2
   test_and_deploy:
     jobs:
       - test
